@@ -37,12 +37,13 @@ body {
     to right,
     #b19cd9,
     #89cff0
-  ); /* Cores mais claras */
+  ); 
   -webkit-background-clip: text;
+  background-clip: text; 
   -webkit-text-fill-color: transparent;
-  border-bottom: 2px solid #b19cd9; /* Cor de borda correspondente à cor inicial do gradiente */
-  border-top: 2px solid #b19cd9; /* Cor de borda correspondente à cor inicial do gradiente */
-  display: inline-block; /* Para garantir que as bordas fiquem justapostas ao texto */
-  padding-top: 0.5rem; /* Espaço acima do texto */
-  padding-bottom: 0.5rem; /* Espaço abaixo do texto */
+  border-bottom: 2px solid #b19cd9; 
+  border-top: 2px solid #b19cd9;
+  display: inline-block; 
+  padding-top: 0.5rem; 
+  padding-bottom: 0.5rem; 
 }

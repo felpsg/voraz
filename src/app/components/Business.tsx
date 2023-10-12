@@ -14,7 +14,7 @@ interface BusinessProps {
 
 const Business: React.FC<BusinessProps> = (props) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 mx-4 my-8">
+    <div className="bg-white rounded-lg shadow-lg p-6 mx-4 my-8 z-10 relative">
       <div className="flex items-center justify-between mb-4">
         {' '}
         {/* Margem inferior adicionada */}

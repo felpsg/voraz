@@ -28,9 +28,9 @@ const SearchBar: React.FC<SearchBarProps> = (props) => {
 
         <div className="mb-6 space-x-4">
           {['Melhor Match', 'Mais Avaliado', 'Mais Comentado'].map(
-            (label, index) => (
+            (label) => (
               <button
-                key={index}
+                key={label}
                 onClick={() => props.setSortBy(label)}
                 className={`px-4 py-2 rounded-md border border-gray-300 text-white hover:border-purple-500 hover:text-purple-500 transition duration-300 ${
                   props.sortBy === label
@@ -68,16 +68,6 @@ const SearchBar: React.FC<SearchBarProps> = (props) => {
               <FaMapMarkerAlt size={14} />
             </span>
           </div>
-        </div>
-        <div>
-          <button
-            onClick={() =>
-              props.searchYelp(props.term, props.location, props.sortBy)
-            }
-            className="px-20 py-2 bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-md hover:from-purple-600 hover:to-indigo-600 transition duration-300 shadow-lg"
-          >
-            Pesquisar
-          </button>
         </div>
       </div>
     </div>
