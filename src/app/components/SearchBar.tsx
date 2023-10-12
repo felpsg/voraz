@@ -1,5 +1,8 @@
 import React from 'react';
 import { FaSearch, FaMapMarkerAlt } from 'react-icons/fa';
+import SortButton from './SortButton';
+import SearchButton from './SearchButton';
+import Link from 'next/link';
 
 interface SearchBarProps {
   term: string;
@@ -24,24 +27,19 @@ const SearchBar: React.FC<SearchBarProps> = (props) => {
         Seu navegador não suporta a tag de vídeo.
       </video>
       <div className="relative z-10 p-6 text-center">
-        <h1 className="text-4xl font-bold mb-6 gradient-text">Voraz</h1>
+        <Link href="/" className="block mb-6">
+          <h1 className="text-4xl font-bold mb-6 gradient-text">Voraz</h1>
+        </Link>
 
         <div className="mb-6 space-x-4">
-          {['Melhor Match', 'Mais Avaliado', 'Mais Comentado'].map(
-            (label) => (
-              <button
-                key={label}
-                onClick={() => props.setSortBy(label)}
-                className={`px-4 py-2 rounded-md border border-gray-300 text-white hover:border-purple-500 hover:text-purple-500 transition duration-300 ${
-                  props.sortBy === label
-                    ? 'border-purple-500 text-purple-500'
-                    : ''
-                }`}
-              >
-                {label}
-              </button>
-            ),
-          )}
+          {['Melhor Match', 'Mais Avaliado', 'Mais Comentado'].map((label) => (
+            <SortButton
+              key={label}
+              label={label}
+              active={props.sortBy === label}
+              onClick={props.setSortBy}
+            />
+          ))}
         </div>
         <div className="flex items-center space-x-4 mb-6 justify-center">
           <div className="relative w-1/3">
@@ -68,6 +66,14 @@ const SearchBar: React.FC<SearchBarProps> = (props) => {
               <FaMapMarkerAlt size={14} />
             </span>
           </div>
+        </div>
+        <div>
+          <SearchButton
+            searchYelp={props.searchYelp}
+            term={props.term}
+            location={props.location}
+            sortBy={props.sortBy}
+          />
         </div>
       </div>
     </div>

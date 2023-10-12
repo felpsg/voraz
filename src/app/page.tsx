@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import BusinessList from '@/app/components/BusinessList';
 import SearchBar from '@/app/components/SearchBar';
 import Business from '@/app/components/Business';
+import SortButton from './components/SortButton';
 
 const Page: React.FC = () => {
   const [term, setTerm] = useState<string>('');
@@ -35,6 +36,7 @@ const Page: React.FC = () => {
         rating={4.5}
         reviewCount={100}
       />
+  
     </div>
   );
 };
