@@ -1,6 +1,11 @@
+/* styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: 'Roboto', 'Inter', sans-serif;
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;
